@@ -201,7 +201,7 @@ public class JpaPersonRepository implements PersonRepository {
      * @return a list of sorPerson records.
      */
     public List<SorPerson> getSoRRecordsForPerson(final Person person){
-        return (List<SorPerson>) this.entityManager.createQuery("select s from sorPerson s where s.personId = :personId").setParameter("personId", person.getId()).getResultList();
+        return (List<SorPerson>) this.entityManager.createQuery("select s from sorPerson s where s.personId = :personId order by s.lastModified desc").setParameter("personId", person.getId()).getResultList();
     }
 
     public Number getCountOfSoRRecordsForPerson(final Person person) {

@@ -56,6 +56,8 @@ public class MockSorRole extends Entity implements SorRole {
 
     private String title;
 
+    private Map<String, String> sorLocalAttributes = new HashMap<String, String>();
+
 	public MockSorRole() {
 	}
 
@@ -255,6 +257,11 @@ public class MockSorRole extends Entity implements SorRole {
 	public Date getEnd() {
 		return null;
 	}
+
+    @Override
+    public Map<String, String> getSorLocalAttributes() {
+        return null;
+    }
 
     @Override
     public void addOrUpdateEmail(String emailAddress, Type emailType) {

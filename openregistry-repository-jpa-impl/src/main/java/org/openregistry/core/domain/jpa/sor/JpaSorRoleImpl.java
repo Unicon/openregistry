@@ -156,6 +156,12 @@ public class JpaSorRoleImpl extends Entity implements SorRole {
     @JoinColumn(name="affiliation_t")
     private JpaTypeImpl affiliationType;
 
+    @ElementCollection
+    @CollectionTable(name = "prs_role_records_loc_attr", joinColumns = @JoinColumn(name = "role_record_id"))
+    @MapKeyColumn(name="attribute_type")
+    @Column(name="attribute_value")
+    private Map<String, String> sorLocalAttributes = new HashMap<String, String>();
+
     public JpaSorRoleImpl() {
         // nothing to do
     }
@@ -467,4 +473,6 @@ public class JpaSorRoleImpl extends Entity implements SorRole {
             addEmailAddress(e);
         }
     }
+
+    public Map<String, String> getSorLocalAttributes() { return this.sorLocalAttributes; }
 }

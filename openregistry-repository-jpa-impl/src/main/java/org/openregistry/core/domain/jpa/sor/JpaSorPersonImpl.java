@@ -117,6 +117,8 @@ public class JpaSorPersonImpl extends Entity implements SorPerson {
     @Column(name = "attribute_value")
     private Map<String, String> sorLocalAttributes = new HashMap<String, String>();
 
+    @Version private Date lastModified;
+
     public List<SorRole> getRoles() {
         return this.roles;
     }
@@ -168,6 +170,8 @@ public class JpaSorPersonImpl extends Entity implements SorPerson {
     public void setGender(final String gender) {
         this.gender = gender;
     }
+
+
 
     /**
      * @see org.openregistry.core.domain.sor.SorPerson#getDisclosureSettings()
@@ -328,5 +332,14 @@ public class JpaSorPersonImpl extends Entity implements SorPerson {
         result = 31 * result + (ssn != null ? ssn.hashCode() : 0);
         result = 31 * result + (roles != null ? roles.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public Date getLastModified() {
+        return lastModified;
+    }
+
+    public void setLastModified(Date lastModified) {
+        this.lastModified = lastModified;
     }
 }

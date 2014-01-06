@@ -234,4 +234,5 @@ public interface SorPerson {
 
     List<SorRole> findOpenRolesByAffiliation(Type affiliationType);
 
+    Date getLastModified();
 }

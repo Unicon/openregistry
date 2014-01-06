@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>openregistry</artifactId>
         <groupId>org.jasig.openregistry</groupId>
@@ -115,11 +116,11 @@
 
         <!-- TEST DEPENDENCIES -->
         <!--<dependency>-->
-            <!--<groupId>org.jasig.openregistry</groupId>-->
-            <!--<artifactId>openregistry-service-impl</artifactId>-->
-            <!--<version>${project.version}</version>-->
-            <!--<scope>test</scope>-->
-            <!--<type>jar</type>-->
+        <!--<groupId>org.jasig.openregistry</groupId>-->
+        <!--<artifactId>openregistry-service-impl</artifactId>-->
+        <!--<version>${project.version}</version>-->
+        <!--<scope>test</scope>-->
+        <!--<type>jar</type>-->
         <!--</dependency>-->
 
         <dependency>
@@ -170,45 +171,48 @@
     </dependencies>
 
     <build>
-      <plugins>
+        <plugins>
 
-             <!-- un comment this to run hibernate maven pluging -->
-             <!--<plugin>-->
+            <!-- un comment this to run hibernate maven pluging -->
+            <plugin>
 
-              <!--<groupId>org.codehaus.mojo</groupId>-->
-              <!--<artifactId>hibernate3-maven-plugin</artifactId>-->
-                 <!--<version>3.0-SNAPSHOT</version>-->
-                 <!--<configuration>-->
-                     <!--<hibernatetool destdir="target">-->
-                         <!--<classpath>-->
-                             <!--<path location="target/classes" />-->
-                         <!--</classpath>-->
-                         <!--<jpaconfiguration persistenceunit="OpenRegistryPersistence" propertyfile="src/test/resources/hibernate.properties" />-->
-                         <!--<hbm2ddl export="false" update="false" drop="false" create="true" outputfilename="or_schema.ddl" delimiter=";" format="true" haltonerror="true" console="true" />-->
-                     <!--</hibernatetool>-->
-                 <!--</configuration>-->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>hibernate3-maven-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <hibernatetool destdir="target">
+                        <classpath>
+                            <path location="target/classes"/>
+                        </classpath>
+                        <jpaconfiguration persistenceunit="OpenRegistryPersistence"
+                                          propertyfile="src/test/resources/hibernate.properties"/>
+                        <hbm2ddl export="false" update="false" drop="false" create="true" outputfilename="or_schema.ddl"
+                                 delimiter=";" format="true" haltonerror="true" console="true"/>
+                    </hibernatetool>
+                </configuration>
 
-            <!--</plugin>-->
+            </plugin>
 
         </plugins>
     </build>
 
     <pluginRepositories>
         <!--un comment this to run hbm 2ddl-->
-        <!--<pluginRepository>-->
-            <!--<id>Codehaus Snapshots</id>-->
-            <!--<url>https://nexus.codehaus.org/content/repositories/codehaus-snapshots</url>-->
-            <!--<snapshots>-->
-            <!--<enabled>true</enabled>-->
-            <!--</snapshots>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>  &lt;!&ndash; Workaround for MNG-2974, see note below &ndash;&gt;-->
-            <!--</releases>-->
-        <!--</pluginRepository>-->
+        <pluginRepository>
+            <id>Codehaus Snapshots</id>
+            <url>https://nexus.codehaus.org/content/repositories/codehaus-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <!-- Workaround for MNG-2974, see note below -->
+            </releases>
+        </pluginRepository>
 
         <pluginRepository>
-          <id>maven-annotation-plugin</id>
-          <url>http://maven-annotation-plugin.googlecode.com/svn/trunk/mavenrepo</url>
+            <id>maven-annotation-plugin</id>
+            <url>http://maven-annotation-plugin.googlecode.com/svn/trunk/mavenrepo</url>
         </pluginRepository>
     </pluginRepositories>
 </project>

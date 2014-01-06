@@ -170,4 +170,14 @@ public interface SorRole extends Serializable, MutableDateRange {
      * @return true if its active, false otherwise.
      */
     boolean isActive();
+
+    /**
+     * Retrieves a collection of K->V un-typed attributes that SoR might pass along
+     *
+     * <p> SoRs and the target OR installation should agree on the common attributes and their keys,
+     * for example in local batch jobs configurations, etc.
+     *
+     * @return Map representing K->V attributes that a target SoR wishes to expose
+     */
+    Map<String, String> getSorLocalAttributes();
 }

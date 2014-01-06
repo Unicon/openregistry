@@ -62,6 +62,8 @@ public class MockSorPerson extends Entity implements SorPerson {
 
     private Map<String, String> sorLocalAttributes = new HashMap<String, String>();
 
+    private Date lastModified;
+
     public MockSorPerson() {
     }
 
@@ -128,6 +130,8 @@ public class MockSorPerson extends Entity implements SorPerson {
     public SorDisclosureSettings getDisclosureSettings() {
         return this.mockDisclosureSettings;
     }
+
+    public Date getLastModified() { return this.lastModified; }
 
     public void setDisclosureSettings(SorDisclosureSettings disclosureSettings) {
     	this.mockDisclosureSettings = (MockSorDisclosureSettings)disclosureSettings;
